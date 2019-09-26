@@ -22,7 +22,7 @@
     echo count($results); 
     if (count($results) > 0 && password_verify($_POST['password'], $results['password'])) {
       $_SESSION['user_id'] = $results['id'];
-      header("Location: logged_in.php");
+      header("Location: show_books.php");
     } else {
       $message = 'Sorry, those credentials do not match';
     }

@@ -1,22 +1,4 @@
-<?php
-  session_start();
-
-  require 'database.php';
-
-  if (isset($_SESSION['user_id'])) {
-    $records = $conn->prepare('SELECT `id`, `email`, `password`, `name` FROM `users` WHERE `id` = :id');
-    $records->bindParam(':id', $_SESSION['user_id']);
-    $records->execute();
-    $results = $records->fetch(PDO::FETCH_ASSOC);
-
-    $user = null;
-
-    if (count($results) > 0) {
-      $user = $results;
-    }
-  }
-?>
-
+<?php require 'check_session.php'; ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -34,6 +16,14 @@
       <a href="logout.php">
         Logout
       </a>
+      <div>
+        <div>
+          <h3>Books Available</h3>
+        </div>
+        <div>
+          
+        </div>
+      </div>
     <?php else: ?>
       <h1>Please Login or SignUp</h1>
 

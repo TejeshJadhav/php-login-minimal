@@ -1,3 +1,4 @@
 <header>
-  <a href="index.php">LOOK BOOKS</a>
+  <a href="show_books.php">LOOK BOOKS</a>
 </header>
+  <!-- add your header here -->
